@@ -9,7 +9,7 @@ import Search from './Search';
 const libraries = ["places"];
 const mapContainerStyle = {
   width: '100vw',
-  height: '70vh'
+  height: '80vh'
 }
 
 const center = {
@@ -24,7 +24,7 @@ const options = {
 
 export default function Maps() {
   const {isLoaded, loadError} = useLoadScript({
-    googleMapsApiKey: 'AIzaSyDak_JWRjE_pgymoWdEtUst3w0y6beBXk0',
+    googleMapsApiKey: "AIzaSyDak_JWRjE_pgymoWdEtUst3w0y6beBXk0",
     libraries,
   })
 //
@@ -55,6 +55,7 @@ export default function Maps() {
   if (!loadError) 
     return (
       <>
+      <h1 className='logo'>ARCHMAPS</h1>
       <Search panTo={panTo} />
       <Locate panTo={panTo}/>
         <GoogleMap 

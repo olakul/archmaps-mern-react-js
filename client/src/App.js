@@ -1,18 +1,17 @@
 import './App.css';
 import React from 'react';
 import Maps from './components/Map';
-// import Locate from './components/Locate';
-// import Search from './components/Search';
-// import panTo from './components/Map';
-
+// import Navbar from './components/Navbar';
+import LandmarksList from './components/LandmarksList';
 
 class App extends React.Component {
   render() {
     return(
       <>
-      {/* <Search panTo={panTo} /> */}
-      {/* <Locate panTo={panTo} /> */}
+      {/* <Navbar/> */}
       <Maps/>
+      <LandmarksList/>
+      //
       </>
       
     )

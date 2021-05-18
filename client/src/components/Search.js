@@ -6,8 +6,7 @@ import {
   ComboboxInput,
   ComboboxPopover,
   ComboboxList,
-  ComboboxOption,
-  ComboboxOptionText,
+  ComboboxOption
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import searchStyles from './searchStyles.css';
@@ -41,7 +40,9 @@ export default function Search({panTo}) {
     } catch (error) {
       console.log("Error: ", error);
     }
+    
   };
+  //
   
   return (
     <div className='search' key='search'>

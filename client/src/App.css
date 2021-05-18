@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .mapContainer {
   width: 100vw;
-  height: 400px
-  
+  height: 400px;
+}
+
+.logo {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #281414;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
 }
