@@ -16,7 +16,7 @@ router.post('/', (req, res, next) =>{
     res.json(err)
   });
 });
-
+//
 router.get('/', (req, res, next) => {
   Landmark.find()
   .then(landmarks => {
@@ -37,11 +37,18 @@ router.get('/:id', (req, res, next) =>{
   .catch(err => res.json(err));
 });
 
-router.put('/:id', (req, res, next) =>{
-  const {address, year, architect, description} = req.body;
+router.post('/edit', (req, res, next) => {
+  Landmark.create( {coordinates: {lat: req.body.lat, lng: req.body.lng}})
+  .then(landmark => {
+    res.status(200).json(landmark)
+  })
+})
+
+router.put('/edit/:id', (req, res, next) =>{
+  const {year, architect, description, tags} = req.body;
   Landmark.findByIdAndUpdate(
     req.params.id,
-    {address, year, architect, description},
+    {year, architect, description, tags},
     {new: true}
   )
   .then(landmark => {
@@ -58,4 +65,17 @@ router.delete('/:id', (req, res, next) =>{
 });
 
 
+
+// router.post('/edit/:id', (req, res, next) => {
+//   Landmark.findByIdAndUpdate(
+//     req.params.id,
+//     {address, year, architect, description},
+//     {new: true}
+//   )
+//   .then(landmark => {
+//     res.status(200).json(landmark);
+//   })
+//   .catch(err => res.json(err));
+// });
+  
 module.exports = router;

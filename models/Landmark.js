@@ -1,17 +1,16 @@
 const { Schema, model } = require("mongoose");
 
 const landmarkSchema = new Schema({
-  address: {
-    type: String,
-    country: String,
-    city: String,
-    zipCode: Number,
-    street: String,
-    houseNumber: String,
+  
+  coordinates: {
+    lat: Number,
+    lng: Number
   },
   year: Number,
   architect: String,
-  description: String
+  description: String,
+  tags: String,
+  
 })
 
 const Landmark = model("Landmark", landmarkSchema);

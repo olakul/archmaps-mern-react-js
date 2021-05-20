@@ -1,10 +1,8 @@
 
 require("dotenv/config");
-
 require("./db");
 
 const express = require("express");
-
 const app = express();
 
 require("./config")(app);
@@ -35,7 +33,6 @@ passport.serializeUser((user, done) => {
   done(null, user._id);
 })
 
-// this is used to retrieve the user by it's id (that is stored in the session)
 passport.deserializeUser((id, done) => {
   User.findById(id)
     .then(dbUser => {
@@ -71,7 +68,7 @@ passport.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const projects = require("./routes/projects");
+const landmarks = require("./routes/landmarks");
 app.use("/api/landmarks", landmarks);
 
 const auth = require("./routes/auth");
